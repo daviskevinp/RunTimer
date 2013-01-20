@@ -1,45 +1,60 @@
 ﻿@media screen and (-ms-view-state: fullscreen-landscape) {
-body {
-    padding: 5%;
+div {
+    font-size: 84pt;
+    text-align: center;
+}
+
+button {
+    font-size: 72pt;
 }
 
 #container {
+  padding: 50px;
   display: -ms-grid;
-  -ms-grid-columns: 300px auto 300px;
-  -ms-grid-rows: 100px 1fr 100px;
+  -ms-grid-columns: 2fr 3fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 #start {
   -ms-grid-column: 1;
-  -ms-grid-row-span: 3;
+  -ms-grid-row-span: 5;
   -ms-grid-row: 1;
 }
 
 #targetSpeed {
     -ms-grid-column: 2;
-    -ms-grid-row: 4;
-    -ms-grid-column-span: 2;
+    -ms-grid-row: 5;
 }
 
 #distance {
   -ms-grid-column: 2;
   -ms-grid-row: 1;
+  -ms-grid-row-align: center;
+}
+
+#totalDistance {
+  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-align: center;
 }
 
 #elapsedTime {
   -ms-grid-column: 2;
-  -ms-grid-row: 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-align: center;
 }
 
 #targetTime {
   -ms-grid-column: 2;
-  -ms-grid-row: 3;
+  -ms-grid-row: 4;
+  -ms-grid-row-align: center;
 }
 
 #speed {
   -ms-grid-column: 3;
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
+  -ms-grid-row-align: center;
 }
 
 #increaseSpeed {

@@ -1,6 +1,6 @@
 ﻿//globals
-window.flagclock = 0;
-window.flagstop = 0;
+window.clockIsRunning = 0;
+window.clockIsStopped = 0;
 window.stoptime = 0;
 window.splitcounter = 0;
 var currenttime;
@@ -8,6 +8,8 @@ window.splitdate = '';
 var output;
 var clock;
 var starttime;
+var totalDistance = 0.0;
+var prevTime;
 
 
 (function () {
@@ -25,7 +27,7 @@ var starttime;
         } else {
             newVal = 0.0;
         }
-        $('#speed').text(newVal);
+        $('#speed').text(newVal.toFixed(1));
         updateRequiredSpeed();
     });
 
@@ -56,15 +58,16 @@ function getTimeLeft() {
 }
 
 function counter(starttime) {
-    output = document.getElementById('output');
+
     clock = $("#elapsedTime");
     currenttime = new Date();
     var timediff = currenttime.getTime() - starttime;
-    if (flagstop == 1) {
+    if (clockIsStopped == 1) {
         timediff = timediff + stoptime;
     }
-    if (flagclock == 1) {
+    if (clockIsRunning == 1) {
         clock.text(formattime(timediff, ''));
+        updateDisplayDistance();
         refresh = setTimeout('counter(' + starttime + ');', 10);
     }
     else {
@@ -77,15 +80,27 @@ function startstop() {
     var startstop = $("#start");
     var startdate = new Date();
     starttime = startdate.getTime();
-    if (window.flagclock == 0) {
+    prevTime = starttime;
+    if (window.clockIsRunning == 0) {
         startstop.text("STOP");
-        window.flagclock = 1;
+        window.clockIsRunning = 1;
         counter(starttime);
     } else {
         startstop.text("START");
-        window.flagclock = 0;
-        flagstop = 1;
+        window.clockIsRunning = 0;
+        window.clockIsStopped = 1;
     }
+}
+
+function updateDisplayDistance() {
+    var currentSpeed = $("#speed").text();
+    var now = currenttime.getTime();
+    var timediff = now - window.prevTime;
+    window.prevTime = now;
+    var incrementalDistance = (timediff * parseFloat(currentSpeed) / 3600000);
+    window.totalDistance += incrementalDistance;
+    var displayDistance = (Math.round(window.totalDistance * 100) / 100).toFixed(2);
+    $("#totalDistance").text(displayDistance);
 }
 
 function formattime(rawtime, roundtype) {
