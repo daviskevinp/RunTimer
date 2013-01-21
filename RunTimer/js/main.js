@@ -17,7 +17,6 @@ var prevTime;
         var currVal = $('#speed').text();
         var newVal = (Math.round(currVal * 10)+ 1)/10;
         $('#speed').text(newVal);
-        updateRequiredSpeed();
     });
 
     $("#decreaseSpeed").on("click", function() {
@@ -28,7 +27,6 @@ var prevTime;
             newVal = 0.0;
         }
         $('#speed').text(newVal.toFixed(1));
-        updateRequiredSpeed();
     });
 
     $("#start").on("click", function () {
@@ -39,9 +37,9 @@ var prevTime;
 function updateRequiredSpeed() {
     if (starttime != null) {
         var timeLeft = getTimeLeft();
-        console.log(timeLeft);
-        var calcVal = $("#speed").text();
-        $("#targetSpeed").text(calcVal);
+        var distanceLeft = getDistanceLeft();
+        var calcVal = distanceLeft * 3600 * 1000 / timeLeft;
+        $("#targetSpeed").text(calcVal.toFixed(2));
     }
 }
 
@@ -57,6 +55,11 @@ function getTimeLeft() {
     return targetTime.totalMilliseconds() - elapsedTime;
 }
 
+function getDistanceLeft() {
+    var targetDistance = parseFloat($("#distance").text());
+    return targetDistance - window.totalDistance;
+}
+
 function counter(starttime) {
 
     clock = $("#elapsedTime");
@@ -68,11 +71,12 @@ function counter(starttime) {
     if (clockIsRunning == 1) {
         clock.text(formattime(timediff, ''));
         updateDisplayDistance();
+        updateRequiredSpeed();
         refresh = setTimeout('counter(' + starttime + ');', 10);
     }
     else {
         window.clearTimeout(refresh);
-        stoptime = timediff;
+        window.stoptime = timediff;
     }
 }
 

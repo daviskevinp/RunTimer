@@ -1,68 +1,99 @@
 ﻿@media screen and (-ms-view-state: fullscreen-landscape) {
 div {
-    font-size: 84pt;
-    text-align: center;
+    font-size: 48pt;
 }
 
 button {
-    font-size: 72pt;
+    font-size: 60pt;
 }
 
 #container {
-  padding: 50px;
+    padding: 250px 50px 50px 50px;
   display: -ms-grid;
-  -ms-grid-columns: 2fr 3fr 1fr 1fr;
+  -ms-grid-columns: 2fr 3fr 2fr 1fr 1fr;
   -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
 }
 
 #start {
+    margin: 30px;
   -ms-grid-column: 1;
   -ms-grid-row-span: 5;
   -ms-grid-row: 1;
 }
 
-#targetSpeed {
+#speedLabel {
+    font-size: 42pt;
+    -ms-grid-column: 4;
+    -ms-grid-row: 1;
+    -ms-grid-column-span: 2;
+}
+#targetDistanceLabel {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+}
+
+#totalDistanceLabel {
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+}
+
+#elapsedTimeLabel {
+    -ms-grid-column: 2;
+    -ms-grid-row: 3;
+}
+
+#targetTimeLabel {
+    -ms-grid-column: 2;
+    -ms-grid-row: 4;
+}
+
+#targetSpeedLabel {
     -ms-grid-column: 2;
     -ms-grid-row: 5;
 }
 
+#targetSpeed {
+    -ms-grid-column: 3;
+    -ms-grid-row: 5;
+}
+
 #distance {
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   -ms-grid-row: 1;
   -ms-grid-row-align: center;
 }
 
 #totalDistance {
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   -ms-grid-row: 2;
   -ms-grid-row-align: center;
 }
 
 #elapsedTime {
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   -ms-grid-row: 3;
   -ms-grid-row-align: center;
 }
 
 #targetTime {
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   -ms-grid-row: 4;
   -ms-grid-row-align: center;
 }
 
 #speed {
-  -ms-grid-column: 3;
+  -ms-grid-column: 4;
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
   -ms-grid-row-align: center;
 }
 
 #increaseSpeed {
-  -ms-grid-column: 4;
+  -ms-grid-column: 5;
   -ms-grid-row: 2;    
 }
 #decreaseSpeed {
-  -ms-grid-column: 4;
+  -ms-grid-column: 5;
   -ms-grid-row: 3;
 }
 }
@@ -71,6 +102,108 @@ button {
 }
 
 @media screen and (-ms-view-state: snapped) {
+div {
+    font-size: 18pt;
+      -ms-grid-row-align: center;
+}
+
+button {
+    font-size: 24pt;
+}
+
+#container {
+    padding: 25px 5px 5px 5px;
+  display: -ms-grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+#start {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  -ms-grid-row: 1;
+}
+
+#speedLabel {
+    -ms-grid-column: 1;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 2;
+}
+#targetDistanceLabel {
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+    -ms-grid-column-span: 2;
+}
+
+#totalDistanceLabel {
+    -ms-grid-column: 1;
+    -ms-grid-row: 3;
+    -ms-grid-column-span: 2;
+}
+
+#elapsedTimeLabel {
+    -ms-grid-column: 1;
+    -ms-grid-row: 4;
+    -ms-grid-column-span: 2;
+}
+
+#targetTimeLabel {
+    -ms-grid-column: 1;
+    -ms-grid-row: 5;
+    -ms-grid-column-span: 2;
+}
+
+#targetSpeedLabel {
+    -ms-grid-column: 1;
+    -ms-grid-row: 8;
+    -ms-grid-column-span: 2;
+}
+
+#targetSpeed {
+    -ms-grid-column: 3;
+    -ms-grid-row: 8;
+    -ms-grid-column-span: 2;
+}
+
+#distance {
+  -ms-grid-column: 3;
+  -ms-grid-row: 2;
+  -ms-grid-row-align: center;
+}
+
+#totalDistance {
+  -ms-grid-column: 3;
+  -ms-grid-row: 3;
+  -ms-grid-row-align: center;
+}
+
+#elapsedTime {
+  -ms-grid-column: 3;
+  -ms-grid-row: 4;
+  -ms-grid-row-align: center;
+}
+
+#targetTime {
+  -ms-grid-column: 3;
+  -ms-grid-row: 5;
+  -ms-grid-row-align: center;
+}
+
+#speed {
+  -ms-grid-column: 2;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  -ms-grid-row-align: center;
+}
+
+#increaseSpeed {
+  -ms-grid-column: 3;
+  -ms-grid-row: 6;    
+}
+#decreaseSpeed {
+  -ms-grid-column: 3;
+  -ms-grid-row: 7;
+}
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
