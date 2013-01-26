@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="RunTimer" Logo="images\splashscreen-RT-logo.png" SmallLogo="images\splashscreen-RT-smalllogo.png" Description="RunTimer" ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="RunTimer" Logo="images\splashscreen-RT-logo.png" SmallLogo="images\splashscreen-RT-smalllogo.png" Description="RunTimer" ForegroundText="light" BackgroundColor="#6A0F21">
         <DefaultTile ShowName="allLogos" WideLogo="images\splashscreen-RT-widelogo.png" />
         <SplashScreen Image="images\splashscreen-RT-edit.png" />
       </VisualElements>
