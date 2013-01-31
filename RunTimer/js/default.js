@@ -33,3 +33,18 @@
     app.start();
 
 })();
+
+WinJS.Application.onsettings = function(e) {
+    e.detail.applicationcommands = {
+        "about": {
+            href: "aboutflyout.html",
+            title: "About"
+        },
+        "help": {
+            href: "helpflyout.html",
+            title: "Help"
+        }
+    };
+
+    WinJS.UI.SettingsFlyout.populateSettings(e);
+};

@@ -408,6 +408,17 @@ button {
 }
 }
 
-/* custom stuff */
+/* custom stuff for settings */
+.SettingsPane {
 
+}
 
+.SettingsContent {
+    font-size: 12pt;
+    margin: 10px 10px 10px 10px;
+}
+
+.SettingsTitle {
+    padding-left: 25px;
+    font-size: 36pt;
+}

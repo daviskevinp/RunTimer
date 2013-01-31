@@ -53,7 +53,9 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="aboutflyout.html" />
     <Content Include="default.html" />
+    <Content Include="helpflyout.html" />
     <Content Include="images\splashscreen-RT-edit.png" />
     <Content Include="images\splashscreen-RT-logo.png" />
     <Content Include="images\splashscreen-RT-smalllogo.png" />
