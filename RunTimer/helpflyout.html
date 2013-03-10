@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+        <link href="/css/default.css" rel="stylesheet" />
+
+    </head>
+    <body>
+        <div id="help" 
+             class="win-ui-dark win-header"
+             data-win-control="WinJS.UI.SettingsFlyout"
+             data-win-options="{width:'narrow'}">
+            
+            <div class="SettingsPane">
+                <div class="win-label">
+                    <button onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+                    <div class="SettingsContent"><span class="SettingsTitle">Help</span></div>
+                </div>
+                <article class="SettingsContent">
+   
+                    <div class="SettingsContent">How to use RunTimer</div>
+                     <div class="SettingsContent">RunTimer is an application that allows you to track your pace as you 
+                        run a selected distance in a given time.  You adjust your current speed to 
+                        match what you're running on the treadmill, and the application calculates the 
+                        speed at which you'll need to run in order to make your time goal
+                    </div>
+                    <div class="SettingsContent">In this application demo, the distance is fixed at 3.1 miles (5 km), and the 
+                        target time is 31 minutes.  Future versions will make these numbers adjustable 
+                        from a settings menu.
+                    </div>
+                </article>
+            </div>
+
+        </div>
+    </body>
+</html>
