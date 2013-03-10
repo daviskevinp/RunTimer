@@ -28,6 +28,26 @@ var prevTime;
         }
         $('#speed').text(newVal.toFixed(1));
     });
+    
+    $("#increaseTargetDistance").on("click", function () {
+        if (starttime == null) {
+            var currVal = $('#distance').text();
+            var newVal = (Math.round(currVal * 10) + 1) / 10;
+            $('#distance').text(newVal);
+        }
+    });
+
+    $("#decreaseTargetDistance").on("click", function () {
+        if (starttime == null) {
+            var currVal = $('#distance').text();
+            if (parseInt(currVal * 10) > 0) {
+                var newVal = (Math.round(currVal * 10) - 1) / 10;
+            } else {
+                newVal = 0.0;
+            }
+            $('#distance').text(newVal.toFixed(1));
+        }
+    });
 
     $("#start").on("click", function () {
         startstop();
@@ -86,6 +106,8 @@ function startstop() {
     starttime = startdate.getTime();
     prevTime = starttime;
     if (window.clockIsRunning == 0) {
+        $("#increaseTargetDistance").hide();
+        $("#decreaseTargetDistance").hide();
         startstop.text("STOP");
         window.clockIsRunning = 1;
         counter(starttime);
